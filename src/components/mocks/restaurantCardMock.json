@@ -1,0 +1,74 @@
+{
+  "info": {
+    "id": "12046",
+    "name": "Subway",
+    "cloudinaryImageId": "1ace5fa65eff3e1223feb696c956b38b",
+    "locality": "Telangana",
+    "areaName": "Himayatnagar",
+    "costForTwo": "₹350 for two",
+    "cuisines": ["Salads", "Snacks", "Desserts", "Beverages"],
+    "avgRating": 4,
+    "feeDetails": {
+      "restaurantId": "12046",
+      "fees": [
+        {
+          "name": "BASE_DISTANCE",
+          "fee": 2800
+        },
+        {
+          "name": "BASE_TIME"
+        },
+        {
+          "name": "ANCILLARY_SURGE_FEE"
+        }
+      ],
+      "totalFee": 2800
+    },
+    "parentId": "2",
+    "avgRatingString": "4.0",
+    "totalRatingsString": "10K+",
+    "sla": {
+      "deliveryTime": 38,
+      "lastMileTravel": 2.6,
+      "serviceability": "SERVICEABLE",
+      "slaString": "38 mins",
+      "lastMileTravelString": "2.6 km",
+      "iconType": "ICON_TYPE_EMPTY"
+    },
+    "availability": {
+      "nextCloseTime": "2023-10-09 01:00:00",
+      "opened": true
+    },
+    "badges": {},
+    "isOpen": true,
+    "type": "F",
+    "badgesV2": {
+      "entityBadges": {
+        "imageBased": {},
+        "textBased": {},
+        "textExtendedBadges": {}
+      }
+    },
+    "aggregatedDiscountInfoV3": {
+      "header": "₹150 OFF",
+      "subHeader": "ABOVE ₹399",
+      "discountTag": "FLAT DEAL"
+    },
+    "differentiatedUi": {
+      "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+      "differentiatedUiMediaDetails": {
+        "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+        "lottie": {},
+        "video": {}
+      }
+    },
+    "reviewsSummary": {},
+    "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+    "restaurantOfferPresentationInfo": {}
+  },
+  "analytics": {},
+  "cta": {
+    "link": "https://www.swiggy.com/restaurants/subway-telangana-himayatnagar-hyderabad-12046",
+    "type": "WEBLINK"
+  }
+}
