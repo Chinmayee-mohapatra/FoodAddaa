@@ -1,65 +1,59 @@
-# FoodAddaa - PROJECT
+# FoodAdda
 
-## UNIT TESTING
+FoodAdda is a web application with features similar to Swiggy, offering a seamless way to discover delicious food from a variety of restaurants. With a dynamic and engaging user interface, it provides a delightful experience for food enthusiasts.
 
-## SETUP TESTING IN OUR APP:
+![HomePage](image.png)
 
-- 1. Install React testing library: npm i -D @testing-library/react
-- 2. Install Jest: npm i -D jest
-- 3. Install Bebel dependencies: npm install --save-dev babel-jest @babel/core @babel/preset-env
-- 4. Configure babel inside new "babel.config.js" file.
+### Live Demo
 
----
+Check out the live demo of FoodAdda at https://food-addaa.vercel.app/.
 
-Parcel already uses Babel, and now we are again configuring babel. So parcel will be confused on which configuration to use. So we will have to change in parcel of our application to accomodate babel along with jest.
+### Key Features
 
-Changes:
--> Go to Parcel official doc. -> Language: JavaScript -> Babel -> usage with other tools.
+- Seamless Integration with Swiggy's Public API: FoodAdda connects to Swiggy's public API to provide users with access to a wide range of restaurants and cuisines.
+- Elegant Shimmer UI: The application features a stunning shimmer effect, enhancing the user experience and making the loading process engaging.
+- Dynamic Landing Page: The homepage showcases various restaurants, cuisines, average ratings, and delivery times. It includes a captivating carousel to grab users' attention.
+- Robust Search and Filtering: FoodAdda offers robust search and filtering options, making it easy for users to find their favorite dishes and restaurants.
+- Detailed Restaurant Menu Pages: Explore detailed restaurant menu pages with categorized listings to make informed choices.
+- Convenient Cart Management: A smooth shopping experience is ensured with convenient cart management, allowing users to add and remove items seamlessly.
 
-- 5. Now copy paste the configuration in a new ".parcelrc" file:
+### Tech Stack
 
-{
-"extends": "@parcel/config-default",
-"transformers": {
-"\*.{js,mjs,jsx,cjs,ts,tsx}": [
-"@parcel/transformer-js",
-"@parcel/transformer-react-refresh-wrap"
-]
-}
-}
+FoodAdda is built using the following technologies:
 
-- Now babel.config.js will not have a conflict. This file will be used.
+- Parcel -- efficient package management
+- Babel -- optimized rendering
+- React JS and React Hooks (useState and useEffect)
+- Custom Hooks -- enhanced functionality
+- React Router DOM -- smooth navigation
+- Redux store -- state management
+- Tailwind CSS -- stylish and responsive design
+- Jest and React Testing Library -- unit and integration testing
 
----
+### Code Highlights
 
-- 6. Jest Configuration: npx jest --init
-     - Few questions :
-       -- Using typescript: No
-       -- Choose test environment that will be used for testing: jsdom(browser-like)
-       -- Do you want Jest to add coverage report: Yes
-       -- Which provider should be used to instrument code for coverage? » babel
-       -- Automatically clear mock calls, instances, contexts and results before every test? ... yes
+- Efficient Package Management: Utilizes Parcel for efficient package management, ensuring fast and reliable builds.
+- Optimized Rendering: JSX is used for optimized rendering, enhancing the application's performance.
+- Smooth Navigation: React Router ensures smooth navigation, creating an enjoyable user experience.
+- State Management: The application leverages React useContext and Redux Toolkit for efficient state management.
+- Controlled and Uncontrolled Components: Utilizes controlled and uncontrolled components for enhanced user interaction.
+- Modern JavaScript Features: Incorporates modern JavaScript features such as optional chaining for improved code efficiency.
+- Lazy Loading and Suspense: Implements lazy loading and suspense for improved performance.
 
-- 7. install jsdom library: npm install --save-dev jest-environment-jsdom
+### Installation
 
-### Now we are ready to start writing test cases.
+To run FoodAdda locally, follow these steps:
 
-- For writing test cases we need to create a folder as "\_\_test\_\_" anywhere in our project diectory and write the test files in it.
-- OR we can even write the test files and save it in the format as : <ComponentFileName>.test.js / <ComponentFileName>.spec.js / <ComponentFileName>.test.ts / <ComponentFileName>.spec.ts
+1. Clone the repository:
 
-- 8. Install @babel/preset-react : to make jsx work in test cases.
-- 9. Include @babel/preset-react in babel.config.js file.
+- git clone https://github.com/Chinmayee-mohapatra/FoodAddaa.git
 
-## Why ADDING @babel/preset-react
+2. Install the required dependencies:
 
-Babel is a transpiler, it converts our code from one form to another. This @babel/preset-react is helping our testing library to convert our JSX code to html so that it can read properly.
+- npm install
 
-## .toBeInTheDocument() is imported from @testing-library/jest-dom library.
+3. Start the development server:
 
-to check if an element has loaded or not we use this funtion. toBeInTheDocument()
+- npm start
 
-- 10. Install : @testing-library/jest-dom
-
-## INTEGRATION TESTING
-
-### SEARCH FLOW
+Open your browser and access http://localhost:3000 to view the application.
