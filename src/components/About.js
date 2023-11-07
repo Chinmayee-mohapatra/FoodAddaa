@@ -1,13 +1,26 @@
 import React from "react";
 import FOOD_INTRO from "../assests/foodIntro.png";
 import FOOD_INTRO2 from "../assests/foodIntro2.png";
+import { motion } from "framer-motion";
 
 const About = () => {
   return (
     <div className="w-full flex flex-col justify-center">
       {/* Quote */}
       <div className="flex flex-col items-center gap-6 bg-orange-400 px-4 py-8 text-white">
-        <h1 className=" text-5xl font-bold">Greetings from FoodAddaa</h1>
+        <motion.div
+          animate={{ x: [-100, 40], opacity: 1, scale: 1 }}
+          transition={{
+            duration: 2,
+            delay: 0.2,
+            ease: [0.5, 0.71, 1, 1.5],
+          }}
+          initial={{ opacity: 0, scale: 0.5 }}
+          whileHover={{ scale: 1.2, transition: { duration: 0.2 } }}
+          className=" text-5xl font-bold"
+        >
+          Greetings from FoodAddaa
+        </motion.div>
         <p className="w-[70%] text-center text-2xl font-extralight">
           ❝ We aim to efficiently and quickly deliver restaurant meals to your
           door so you may be treated like a king or queen. Our adventure started
