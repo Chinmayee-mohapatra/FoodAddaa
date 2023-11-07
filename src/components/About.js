@@ -13,7 +13,7 @@ const About = () => {
           transition={{
             duration: 2,
             delay: 0.2,
-            ease: [0.5, 0.71, 1, 1.5],
+            ease: "easeInOut",
           }}
           initial={{ opacity: 0, scale: 0.5 }}
           whileHover={{ scale: 1.2, transition: { duration: 0.2 } }}
