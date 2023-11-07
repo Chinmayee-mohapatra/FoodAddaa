@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { LOGO_URL } from "../utils/constants";
+import LOGO_URL from "../assests/logo.png";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
@@ -17,9 +17,9 @@ const Header = () => {
   // console.log(cartItems);
 
   return (
-    <div className="flex justify-between">
+    <div className="flex justify-between items-center">
       <div className="logo-container">
-        <img className="w-26" src={LOGO_URL} width="150px" height="100px" />
+        <img className="w-26 ml-6" src={LOGO_URL} width="60px" height="50px" />
       </div>
       <div className="flex items-center">
         <ul className="flex gap-2 sm:gap-4 lg:gap-6 p-4 m-4 items-center text-sm md:text-base">
