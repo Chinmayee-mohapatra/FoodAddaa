@@ -14,11 +14,7 @@ const RestaurantMenu = () => {
 
   if (resInfo === null) return <Shimmer />;
 
-  // console.log("Restaurant Info: ", resInfo);
-
   const { offers } = resInfo?.cards[1]?.card?.card?.gridElements?.infoWithStyle;
-
-  // console.log("Offers Available: ", offers);
 
   const {
     name,
@@ -30,22 +26,12 @@ const RestaurantMenu = () => {
     feeDetails,
   } = resInfo?.cards[0]?.card?.card?.info;
 
-  // const { itemCards } =
-  //   resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
-
-  // console.log(
-  //   "Item Cards: ",
-  //   resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards
-  // );
-
   const categories =
     resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
       (c) =>
         c?.card?.card?.["@type"] ===
         "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
     );
-
-  // console.log("categories", categories);
 
   return (
     <div className="w-96 md:w-[32rem] lg:w-[50rem] mx-auto">
