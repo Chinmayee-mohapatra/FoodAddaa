@@ -2,10 +2,9 @@ import React from "react";
 
 const Grocery = () => {
   return (
-    <h1>
-      Our Grocery online store and we have a lot of child components inside this
-      webpage!!
-    </h1>
+    <div className="w-full flex flex-col items-center">
+      <h1 className="font-bold text-4xl">Grocery store - coming soon!!!</h1>
+    </div>
   );
 };
 

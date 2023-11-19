@@ -19,24 +19,31 @@ const Header = () => {
   return (
     <div className="flex justify-between items-center">
       <div className="logo-container">
-        <img className="w-26 ml-6" src={LOGO_URL} width="60px" height="50px" />
+        <Link to="/">
+          <img
+            className="w-26 ml-6 cursor-pointer"
+            src={LOGO_URL}
+            width="60px"
+            height="50px"
+          />
+        </Link>
       </div>
       <div className="flex items-center">
         <ul className="flex gap-2 sm:gap-4 lg:gap-6 p-4 m-4 items-center text-sm md:text-base">
           <li>Status : {onlineStatus ? "✅" : "🔴"}</li>
-          <li>
+          <li className="hover:scale-110 duration-100">
             <Link to="/">Home</Link>
           </li>
-          <li>
+          <li className="hover:scale-110 duration-100">
             <Link to="/about">About</Link>
           </li>
-          <li>
+          <li className="hover:scale-110 duration-100">
             <Link to="/contact">Contact</Link>
           </li>
-          <li>
+          <li className="hover:scale-110 duration-100">
             <Link to="/grocery">Grocery</Link>
           </li>
-          <li>
+          <li className="hover:scale-110 duration-100">
             <Link to="/cart" className="flex">
               <AiOutlineShoppingCart size="1.3rem" />
               <sup className="text-sm font-semibold ">{cartItems.length}</sup>
