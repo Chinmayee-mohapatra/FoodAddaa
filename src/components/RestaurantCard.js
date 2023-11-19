@@ -33,7 +33,7 @@ const RestaurantCard = (props) => {
             width="20"
             height="20"
             fill="white"
-            class="bi bi-star-fill bg-green-600 p-1 rounded-full"
+            className="bi bi-star-fill bg-green-600 p-1 rounded-full"
             viewBox="0 0 16 16"
           >
             <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
@@ -55,7 +55,7 @@ export const withOfferLabel = (RestaurantCard) => {
     const { header, subHeader } = props.resData.info.aggregatedDiscountInfoV3;
     // console.log(props);
     return (
-      <div className="">
+      <div>
         <label className="w-max absolute flex gap-2 bg-slate-800 text-white text-bold m-2 py-1 px-4 shadow-lg rounded-md z-10">
           <p>{header}</p>
           <p>{subHeader}</p>
