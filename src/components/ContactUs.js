@@ -4,7 +4,10 @@ const ContactUs = () => {
   return (
     <div className="flex flex-col justify-center items-center sm:flex-wrap">
       <h1 className="text-2xl font-bold p-4 m-4"> Contact Us </h1>
-      <form className="flex flex-col w-4/12 ">
+      <form
+        className="flex flex-col w-4/12 "
+        onSubmit={(e) => e.preventDefault()}
+      >
         <input
           type="text"
           className="border border-black p-2 m-4"
