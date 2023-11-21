@@ -80,11 +80,13 @@ const RestaurantMenu = () => {
         </div>
       </div>
 
-      <div className="flex gap-2">
-        <label>
-          Veg
-          <input type="checkbox" onChange={(e) => handleCheckbox(e)} />
-        </label>
+      <div className="flex flex-row gap-2">
+        <label className="font-medium text-lg">Veg only</label>
+        <input
+          type="checkbox"
+          className="w-6 accent-green-900 focus:accent-green-600"
+          onChange={(e) => handleCheckbox(e)}
+        />
       </div>
 
       {/* Categories Accordian */}
