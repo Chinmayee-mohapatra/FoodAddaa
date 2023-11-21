@@ -11,6 +11,7 @@ const RestaurantMenu = () => {
   const resInfo = useRestaurantMenu(resID);
 
   const [showIndex, setShowIndex] = useState(0);
+  const [veg, setVeg] = useState(false);
 
   if (resInfo === null) return <Shimmer />;
 
@@ -32,6 +33,10 @@ const RestaurantMenu = () => {
         c?.card?.card?.["@type"] ===
         "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
     );
+
+  const handleCheckbox = (e) => {
+    setVeg(e.target.checked);
+  };
 
   return (
     <div className="w-96 md:w-[32rem] lg:w-[50rem] mx-auto">
@@ -75,11 +80,19 @@ const RestaurantMenu = () => {
         </div>
       </div>
 
+      <div className="flex gap-2">
+        <label>
+          Veg
+          <input type="checkbox" onChange={(e) => handleCheckbox(e)} />
+        </label>
+      </div>
+
       {/* Categories Accordian */}
-      {categories.map((category, index) => (
+      {categories?.map((category, index) => (
         <RestaurantCategory
           key={category?.card?.card?.title}
           data={category?.card?.card}
+          veg={veg}
           showItems={index === showIndex ? true : false}
           setShowIndex={() => setShowIndex(index)}
         />

@@ -3,7 +3,6 @@ import { CDN_URL } from "../utils/constants";
 
 const RestaurantCard = (props) => {
   const { resData } = props;
-  // console.log("res Data: ", resData);
 
   const { cloudinaryImageId, name, cuisines, avgRating, costForTwo, sla } =
     resData?.info;
@@ -53,7 +52,6 @@ const RestaurantCard = (props) => {
 export const withOfferLabel = (RestaurantCard) => {
   return (props) => {
     const { header, subHeader } = props.resData.info.aggregatedDiscountInfoV3;
-    // console.log(props);
     return (
       <div>
         <label className="w-max absolute flex gap-2 bg-slate-800 text-white text-bold m-2 py-1 px-4 shadow-lg rounded-md z-10">

@@ -22,7 +22,6 @@ const Body = () => {
     const data = await fetch(SWIGGY_RES_LIST_API);
 
     const json = await data.json();
-    // console.log(json);
 
     setListOfRestaurants(
       json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants // optional chaining: ?.
@@ -32,7 +31,6 @@ const Body = () => {
     );
   };
 
-  // console.log("List of Restaurants: ", listOfRestaurants);
   const onlineStatus = useOnlineStatus();
 
   if (onlineStatus === false)
@@ -42,8 +40,6 @@ const Body = () => {
         Looks like you are offline. Please check your internet connection.
       </h1>
     );
-
-  // console.log("List of Restaurants: ", listOfRestaurants);
 
   const { loggedInUser, setUserName } = useContext(UserContext);
 
@@ -83,7 +79,6 @@ const Body = () => {
               const filteredList = listOfRestaurants.filter(
                 (res) => res.info.avgRating > 4
               );
-              // console.log("Filtered List: ", filteredList);
               setFilteredRestaurants(filteredList);
             }}
           >

@@ -2,10 +2,7 @@ import { OFFER_ICON } from "../utils/constants";
 
 const OfferCard = (props) => {
   const { data } = props;
-  //   console.log("offer data", data);
   const { header, description, couponCode, offerTag } = data?.info;
-
-  console.log("Offer Tag: ", offerTag);
 
   return (
     <div className="flex border-[1.5px] space-x-2 rounded-lg cursor-pointer">

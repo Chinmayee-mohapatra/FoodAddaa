@@ -1,22 +1,37 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { addItem } from "../utils/cartSlice";
-// import { MENU_CDN_URL } from "../utils/constants";
 
-const ItemList = ({ items }) => {
+const ItemList = ({ veg, items }) => {
   const MENU_CDN_URL =
     "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/";
 
   const dispatch = useDispatch();
+  console.log("items", items);
+  const [filteredItems, setFilteredItems] = useState([]);
 
   const handleAddItem = (item) => {
     // dispatch an action when add button is clicked.
     dispatch(addItem(item));
   };
 
-  return (
+  useEffect(() => {
+    if (veg) {
+      setFilteredItems(
+        items.filter(
+          (item) => item?.card?.info?.itemAttribute?.vegClassifier === "VEG"
+        )
+      );
+    } else {
+      setFilteredItems(items);
+    }
+  });
+
+  return filteredItems.length === 0 ? (
+    <div>No Veg Menu</div>
+  ) : (
     <div>
-      {items.map((item) => (
+      {filteredItems?.map((item) => (
         <div
           data-testid="foodItems"
           className="flex justify-between items-center p-2 m-2 border-gray-200 border-b-2"

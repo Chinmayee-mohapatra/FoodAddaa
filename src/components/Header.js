@@ -14,7 +14,6 @@ const Header = () => {
   // selector is a hook under react. it gives access to the store.
   // we are subscribing to the store using a Selector.
   const cartItems = useSelector((store) => store.cart.items);
-  // console.log(cartItems);
 
   return (
     <div className="flex justify-between items-center">

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import ItemList from "./ItemList";
 
-const RestaurantCategory = ({ data, showItems, setShowIndex }) => {
+const RestaurantCategory = ({ data, veg, showItems, setShowIndex }) => {
   const handleClick = () => {
     setShowIndex();
   };
@@ -29,7 +29,7 @@ const RestaurantCategory = ({ data, showItems, setShowIndex }) => {
           )}
         </div>
         {/* Accordian Body */}
-        {showItems && <ItemList items={data.itemCards} />}
+        {showItems && <ItemList veg={veg} items={data.itemCards} />}
       </div>
     </div>
   );
