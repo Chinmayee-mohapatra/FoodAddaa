@@ -9,7 +9,7 @@ const RestaurantCategory = ({ data, veg, showItems, setShowIndex }) => {
 
   return (
     <div>
-      {/* Header */}
+      {/* Accordian Header */}
       <div className="w-full mx-auto my-2 bg-gray-50 shadow-lg p-4">
         <div
           className="flex justify-between items-center cursor-pointer"

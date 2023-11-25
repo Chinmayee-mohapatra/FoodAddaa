@@ -12,7 +12,7 @@ import "@testing-library/jest-dom";
 global.fetch = jest.fn(() =>
   Promise.resolve({
     json: () => Promise.resolve(MOCK_DATA),
-  })
+  }),
 );
 
 it("Should load Restaurant Menu Component", async () => {
@@ -24,8 +24,8 @@ it("Should load Restaurant Menu Component", async () => {
           <RestaurantMenu />
           <Cart />
         </Provider>
-      </BrowserRouter>
-    )
+      </BrowserRouter>,
+    ),
   );
 
   const accordianHeader = screen.getByText("Recommended (20)");
@@ -54,6 +54,6 @@ it("Should load Restaurant Menu Component", async () => {
   expect(screen.getAllByTestId("foodItems").length).toBe(20);
 
   expect(
-    screen.getByText("Your cart is empty. Add items to the cart.")
+    screen.getByText("Your cart is empty. Add items to the cart."),
   ).toBeInTheDocument();
 });

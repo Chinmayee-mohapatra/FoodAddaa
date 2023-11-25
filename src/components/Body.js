@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
-import UserContext from "../utils/UserContext";
 import { SWIGGY_RES_LIST_API } from "../utils/constants";
 
 const Body = () => {
@@ -24,10 +23,12 @@ const Body = () => {
     const json = await data.json();
 
     setListOfRestaurants(
-      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants // optional chaining: ?.
+      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants, // optional chaining: ?.
     );
     setFilteredRestaurants(
-      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants,
     );
   };
 
@@ -41,9 +42,7 @@ const Body = () => {
       </h1>
     );
 
-  const { loggedInUser, setUserName } = useContext(UserContext);
-
-  return listOfRestaurants.length === 0 ? (
+  return listOfRestaurants?.length === 0 ? (
     <Shimmer />
   ) : (
     <div className="">
@@ -63,7 +62,7 @@ const Body = () => {
             className="px-4 py-1 bg-green-700 m-2 text-white rounded-sm"
             onClick={() => {
               const filteredRestaurants = listOfRestaurants.filter((res) =>
-                res.info.name.toLowerCase().includes(searchText.toLowerCase())
+                res.info.name.toLowerCase().includes(searchText.toLowerCase()),
               );
               setFilteredRestaurants(filteredRestaurants);
             }}
@@ -77,7 +76,7 @@ const Body = () => {
             onClick={() => {
               // Filter logic here
               const filteredList = listOfRestaurants.filter(
-                (res) => res.info.avgRating > 4
+                (res) => res.info.avgRating > 4,
               );
               setFilteredRestaurants(filteredList);
             }}
@@ -85,20 +84,12 @@ const Body = () => {
             Top Rated Restaurants
           </button>
         </div>
-        <div className="search m-4 p-4 flex gap-2 items-center">
-          <label>User Name </label>
-          <input
-            className="border-black border-2 px-2 py-1"
-            value={loggedInUser}
-            onChange={(e) => setUserName(e.target.value)}
-          />
-        </div>
       </div>
       <div className="flex flex-wrap justify-center">
         {filteredRestaurants?.map((restaurant) => (
           <Link
             key={restaurant.info.id}
-            to={"/restaurants/" + restaurant.info.id}
+            to={"/browse/restaurants/" + restaurant.info.id}
           >
             {restaurant.info.aggregatedDiscountInfoV3 ? (
               <RestaurantCardOffer resData={restaurant} />

@@ -11,38 +11,18 @@ import UserContext from "./utils/UserContext";
 import appStore from "./utils/appStore";
 import { Provider } from "react-redux";
 import Cart from "./components/Cart";
+import Login from "./components/Login";
 
 // lazy loading of data
 const Grocery = lazy(() => import("./components/Grocery"));
 
 const AppLayout = () => {
-  const [userName, setUserName] = useState();
-
-  // Authentication
-  useEffect(() => {
-    // MAke an API call to send username and password
-    const data = {
-      name: "Chinmayee",
-    };
-
-    setUserName(data.name);
-  }, []);
-
-  /**
-   * We need to provide our store to our application using Provider. This provider comes from "react-redux".
-   * Wrap the whole app inside <Provider></Provider> and it takes the store as a prop.
-   *
-   * If we dont want the whole app to have access to store, we can even provide the store to a small portion of the app.
-   * Just like UserContext.
-   */
   return (
     <Provider store={appStore}>
-      <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
-        <div className="app">
-          <Header />
-          <Outlet />
-        </div>
-      </UserContext.Provider>
+      <div className="app">
+        <Header />
+        <Outlet />
+      </div>
     </Provider>
   );
 };
@@ -50,22 +30,30 @@ const AppLayout = () => {
 const appRouter = createBrowserRouter([
   {
     path: "/",
+    element: (
+      <Provider store={appStore}>
+        <Login />
+      </Provider>
+    ),
+  },
+  {
+    path: "/browse",
     element: <AppLayout />,
     children: [
       {
-        path: "/",
+        path: "/browse",
         element: <Body />,
       },
       {
-        path: "/about",
+        path: "/browse/about",
         element: <About />,
       },
       {
-        path: "/contact",
+        path: "/browse/contact",
         element: <ContactUs />,
       },
       {
-        path: "/grocery",
+        path: "/browse/grocery",
         element: (
           <Suspense fallback={<h1>Loading...</h1>}>
             <Grocery />
@@ -73,11 +61,11 @@ const appRouter = createBrowserRouter([
         ),
       },
       {
-        path: "/restaurants/:resID",
+        path: "/browse/restaurants/:resID",
         element: <RestaurantMenu />,
       },
       {
-        path: "/cart",
+        path: "/browse/cart",
         element: <Cart />,
       },
     ],

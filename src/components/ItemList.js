@@ -19,16 +19,16 @@ const ItemList = ({ veg, items }) => {
     if (veg) {
       setFilteredItems(
         items.filter(
-          (item) => item?.card?.info?.itemAttribute?.vegClassifier === "VEG"
-        )
+          (item) => item?.card?.info?.itemAttribute?.vegClassifier === "VEG",
+        ),
       );
     } else {
       setFilteredItems(items);
     }
   });
 
-  return filteredItems.length === 0 ? (
-    <div>No Veg Menu</div>
+  return filteredItems?.length === 0 ? (
+    <div>--</div>
   ) : (
     <div>
       {filteredItems?.map((item) => (
@@ -36,7 +36,10 @@ const ItemList = ({ veg, items }) => {
           data-testid="foodItems"
           className="flex justify-between items-center p-2 m-2 border-gray-200 border-b-2"
         >
-          <div key={item.card.info.id} className="w-8/12 text-left font-sans">
+          <div
+            key={item?.card?.info?.id}
+            className="w-8/12 text-left font-sans"
+          >
             <div className="flex flex-col py-2">
               <span>
                 {item?.card?.info?.itemAttribute?.vegClassifier === "VEG" ? (
@@ -53,14 +56,14 @@ const ItemList = ({ veg, items }) => {
                   />
                 )}{" "}
               </span>
-              <span className="font-semibold">{item.card.info.name}</span>
+              <span className="font-semibold">{item?.card?.info?.name}</span>
               <span className="font-mono">
                 ₹{" "}
-                {item.card.info.price / 100 ||
-                  item.card.info.defaultPrice / 100}
+                {item?.card?.info?.price / 100 ||
+                  item?.card?.info?.defaultPrice / 100}
               </span>
             </div>
-            <p className="text-sm">{item.card.info.description}</p>
+            <p className="text-sm">{item?.card?.info?.description}</p>
           </div>
           <div className="w-2/12 p-2">
             <div className="absolute">

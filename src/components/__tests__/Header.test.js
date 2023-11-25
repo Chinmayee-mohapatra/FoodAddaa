@@ -11,7 +11,7 @@ it("Should render Header component with a login button", () => {
       <Provider store={appStore}>
         <Header />
       </Provider>
-    </BrowserRouter>
+    </BrowserRouter>,
   );
 
   const loginButton = screen.getByRole("button", { name: "Login" }); // can add additional parameters
@@ -26,7 +26,7 @@ it("Should render Header component with home link", () => {
       <Provider store={appStore}>
         <Header />
       </Provider>
-    </BrowserRouter>
+    </BrowserRouter>,
   );
 
   const homeLink = screen.getByText(/Home/); // using regex for matching
@@ -39,7 +39,7 @@ it("Should chagnge login button to logout on click in header component", () => {
       <Provider store={appStore}>
         <Header />
       </Provider>
-    </BrowserRouter>
+    </BrowserRouter>,
   );
 
   const loginButton = screen.getByRole("button", { name: "Login" });

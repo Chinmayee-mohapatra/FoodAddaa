@@ -1,3 +1,9 @@
+export const LOGIN_CDN_URL =
+  "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_1340/Lunch1_vlksgq";
+
+export const USER_AVATAR =
+  "https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png";
+
 export const CDN_URL =
   "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
 
