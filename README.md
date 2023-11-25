@@ -6,7 +6,7 @@ FoodAdda is a web application with features similar to Swiggy, offering a seamle
 
 ### Live Demo
 
-Check out the live demo of FoodAdda at https://food-addaa.vercel.app/.
+Check out the live demo of FoodAdda at https://foodaddaa-103ee.web.app/.
 
 ### Key Features
 
