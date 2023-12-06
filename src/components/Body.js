@@ -5,6 +5,7 @@ import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import { SWIGGY_RES_LIST_API } from "../utils/constants";
+import BodyOffersCards from "./BodyOffersCards";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
@@ -23,12 +24,10 @@ const Body = () => {
     const json = await data.json();
 
     setListOfRestaurants(
-      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
-        ?.restaurants, // optional chaining: ?.
+      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants // optional chaining: ?.
     );
     setFilteredRestaurants(
-      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
-        ?.restaurants,
+      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
 
@@ -62,7 +61,7 @@ const Body = () => {
             className="px-4 py-1 bg-green-700 m-2 text-white rounded-sm"
             onClick={() => {
               const filteredRestaurants = listOfRestaurants.filter((res) =>
-                res.info.name.toLowerCase().includes(searchText.toLowerCase()),
+                res.info.name.toLowerCase().includes(searchText.toLowerCase())
               );
               setFilteredRestaurants(filteredRestaurants);
             }}
@@ -76,7 +75,7 @@ const Body = () => {
             onClick={() => {
               // Filter logic here
               const filteredList = listOfRestaurants.filter(
-                (res) => res.info.avgRating > 4,
+                (res) => res.info.avgRating > 4
               );
               setFilteredRestaurants(filteredList);
             }}
@@ -84,6 +83,17 @@ const Body = () => {
             Top Rated Restaurants
           </button>
         </div>
+      </div>
+
+      {/* Offers on body page */}
+      <div className="">
+        <BodyOffersCards />
+      </div>
+
+      <div>
+        <p className="font-semibold text-2xl mx-10 my-2">
+          Top restaurant chains
+        </p>
       </div>
       <div className="flex flex-wrap justify-center">
         {filteredRestaurants?.map((restaurant) => (

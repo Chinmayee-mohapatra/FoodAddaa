@@ -21,3 +21,6 @@ export const OFFER_ICON =
 
 export const FLAT_OFFER_ICON =
   "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_28,h_28/rng/md/ads/production/41883e85327a5a799d45d9b95f3510a3";
+
+export const BODY_OFFER_BANNER =
+  "https://corsproxy.io/?https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_680,h_400/";
