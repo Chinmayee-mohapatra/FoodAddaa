@@ -5,7 +5,7 @@ import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import { SWIGGY_RES_LIST_API } from "../utils/constants";
-import BodyOffersCards from "./BodyOffersCards";
+import BodyOffersCards from "./mainSections/BodyOffersCards";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import LOGO_URL from "../assests/logo.png";
 import { Link, useNavigate } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
@@ -7,6 +7,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { addUser, removeUser } from "../utils/userSlice";
+import useLocationAPI from "../utils/useLocationAPI";
+import { useRef } from "react";
 
 const Header = ({ isLoginForm, setLoginForm }) => {
   const onlineStatus = useOnlineStatus();
@@ -14,6 +16,9 @@ const Header = ({ isLoginForm, setLoginForm }) => {
   const navigate = useNavigate();
   const cartItems = useSelector((store) => store.cart.items);
   const user = useSelector((store) => store.user);
+
+  const [locationData, setLocationData] = useState("");
+  const location = useRef(null);
 
   const handleSignOut = () => {
     signOut(auth)
@@ -30,6 +35,11 @@ const Header = ({ isLoginForm, setLoginForm }) => {
     setLoginForm();
   };
 
+  const handleSearch = (searchQuery) => {
+    useLocationAPI(searchQuery, setLocationData);
+    console.log("Location Data: ", locationData);
+  };
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -40,7 +50,7 @@ const Header = ({ isLoginForm, setLoginForm }) => {
             email: email,
             displayName: displayName,
             photoURL: photoURL,
-          }),
+          })
         );
         navigate("/browse");
       } else {
@@ -54,7 +64,7 @@ const Header = ({ isLoginForm, setLoginForm }) => {
 
   return (
     <div className="flex justify-between items-center">
-      <div className="logo-container">
+      <div className="logo-container ">
         <Link to="/browse/">
           <img
             className="w-26 ml-6 cursor-pointer"
@@ -89,6 +99,15 @@ const Header = ({ isLoginForm, setLoginForm }) => {
       {user && (
         <div className="flex items-center">
           <ul className="flex gap-2 sm:gap-4 lg:gap-6 p-4 m-4 items-center text-sm md:text-base">
+            <li>
+              <input
+                ref={location}
+                onChange={() => {
+                  handleSearch(location.current?.value);
+                }}
+                placeholder="Enter your location "
+              />
+            </li>
             <li>Status : {onlineStatus ? "✅" : "🔴"}</li>
             <li className="hover:scale-110 duration-100">
               <Link to="/browse/">Home</Link>

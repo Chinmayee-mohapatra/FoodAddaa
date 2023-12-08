@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { BODY_OFFER_BANNER, SWIGGY_RES_LIST_API } from "../utils/constants";
+import { BODY_OFFER_BANNER, SWIGGY_RES_LIST_API } from "../../utils/constants";
 import { Oval } from "react-loader-spinner";
 
 const BodyOffersCards = () => {
