@@ -6,10 +6,13 @@ import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import { SWIGGY_RES_LIST_API } from "../utils/constants";
 import BodyOffersCards from "./mainSections/BodyOffersCards";
+import WhatsOnYourMind from "./mainSections/WhatsOnYourMind";
+import InfiniteRestaurantList from "./mainSections/InfiniteRestaurantList";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
+  const [whatsOnYourMindData, setWhatsOnYourMind] = useState([]);
   const [searchText, setSearchText] = useState("");
 
   const RestaurantCardOffer = withOfferLabel(RestaurantCard);
@@ -23,8 +26,10 @@ const Body = () => {
 
     const json = await data.json();
 
+    setWhatsOnYourMind(json?.data?.cards[1]);
+
     setListOfRestaurants(
-      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants // optional chaining: ?.
+      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     setFilteredRestaurants(
       json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
@@ -88,6 +93,7 @@ const Body = () => {
       {/* Offers on body page */}
       <div className="">
         <BodyOffersCards />
+        <WhatsOnYourMind whatsOnYourMindData={whatsOnYourMindData} />
       </div>
 
       <div>
@@ -108,6 +114,9 @@ const Body = () => {
             )}
           </Link>
         ))}
+      </div>
+      <div>
+        <InfiniteRestaurantList />
       </div>
     </div>
   );
