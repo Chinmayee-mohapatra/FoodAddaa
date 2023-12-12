@@ -2,22 +2,32 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { BODY_OFFER_BANNER, SWIGGY_RES_LIST_API } from "../../utils/constants";
 import { Oval } from "react-loader-spinner";
+import { useSelector } from "react-redux";
 
 const BodyOffersCards = () => {
   const [offerDetails, setOfferDetails] = useState([]);
+  const { lat, lng } = useSelector((store) => store.location.userLocation);
 
   useEffect(() => {
     fetchData();
   }, []);
 
   const fetchData = async () => {
-    const data = await fetch(SWIGGY_RES_LIST_API);
+    const data = await fetch(
+      SWIGGY_RES_LIST_API +
+        "lat=" +
+        lat +
+        "&lng=" +
+        lng +
+        "&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+    );
     const json = await data.json();
 
     setOfferDetails(json?.data?.cards[0]?.card?.card?.imageGridCards?.info);
+    console.log("OFFER DETAILS: ", offerDetails);
   };
 
-  return offerDetails.length === 0 ? (
+  return offerDetails?.length === 0 ? (
     <div className="w-full h-[300px] bg-[#0C2A4C] text-xl text-white flex flex-col gap-4 justify-center items-center">
       <Oval
         height={80}

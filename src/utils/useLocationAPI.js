@@ -1,14 +1,13 @@
-import { LOCATION_API } from "./constants";
+import { ADDRESS_API, LOCATION_API } from "./constants";
 
-const useLocationAPI = async (searchQuery, setLocationData) => {
+export const useLocationAPI = async (searchQuery, setSearchData) => {
   try {
     const data = await fetch(LOCATION_API + searchQuery);
     const json = await data.json();
 
-    setLocationData(json?.data);
+    setSearchData(json?.data);
+    // console.log(lat, lng);
   } catch (err) {
     console.log(err);
   }
 };
-
-export default useLocationAPI;

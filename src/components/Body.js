@@ -8,6 +8,7 @@ import { SWIGGY_RES_LIST_API } from "../utils/constants";
 import BodyOffersCards from "./mainSections/BodyOffersCards";
 import WhatsOnYourMind from "./mainSections/WhatsOnYourMind";
 import InfiniteRestaurantList from "./mainSections/InfiniteRestaurantList";
+import { useSelector } from "react-redux";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
@@ -17,12 +18,21 @@ const Body = () => {
 
   const RestaurantCardOffer = withOfferLabel(RestaurantCard);
 
+  const { lat, lng } = useSelector((store) => store.location.userLocation);
+
   useEffect(() => {
     fetchData();
   }, []);
 
   const fetchData = async () => {
-    const data = await fetch(SWIGGY_RES_LIST_API);
+    const data = await fetch(
+      SWIGGY_RES_LIST_API +
+        "lat=" +
+        lat +
+        "&lng=" +
+        lng +
+        "&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+    );
 
     const json = await data.json();
 

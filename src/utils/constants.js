@@ -11,7 +11,7 @@ export const MENU_CDN_URL =
   "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/";
 
 export const SWIGGY_RES_LIST_API =
-  "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.385044&lng=78.486671&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
+  "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?";
 
 export const MENU_API =
   "https://corsproxy.io/?https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.7040592&lng=77.10249019999999&restaurantId=";
@@ -30,3 +30,6 @@ export const ITEMS_ICON =
 
 export const LOCATION_API =
   "https://corsproxy.io/?https://www.swiggy.com/dapi/misc/place-autocomplete?input=";
+
+export const ADDRESS_API =
+  "https://corsproxy.io/?https://www.swiggy.com/dapi/misc/address-recommend?place_id=";

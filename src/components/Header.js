@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import LOGO_URL from "../assests/logo.png";
 import { Link, useNavigate } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
@@ -7,8 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { addUser, removeUser } from "../utils/userSlice";
-import useLocationAPI from "../utils/useLocationAPI";
-import { useRef } from "react";
+import LocationConfirmation from "./mainSections/LocationConfirmation";
 
 const Header = ({ isLoginForm, setLoginForm }) => {
   const onlineStatus = useOnlineStatus();
@@ -16,9 +15,6 @@ const Header = ({ isLoginForm, setLoginForm }) => {
   const navigate = useNavigate();
   const cartItems = useSelector((store) => store.cart.items);
   const user = useSelector((store) => store.user);
-
-  const [locationData, setLocationData] = useState("");
-  const location = useRef(null);
 
   const handleSignOut = () => {
     signOut(auth)
@@ -33,11 +29,6 @@ const Header = ({ isLoginForm, setLoginForm }) => {
 
   const handleClick = () => {
     setLoginForm();
-  };
-
-  const handleSearch = (searchQuery) => {
-    useLocationAPI(searchQuery, setLocationData);
-    console.log("Location Data: ", locationData);
   };
 
   useEffect(() => {
@@ -99,14 +90,8 @@ const Header = ({ isLoginForm, setLoginForm }) => {
       {user && (
         <div className="flex items-center">
           <ul className="flex gap-2 sm:gap-4 lg:gap-6 p-4 m-4 items-center text-sm md:text-base">
-            <li>
-              <input
-                ref={location}
-                onChange={() => {
-                  handleSearch(location.current?.value);
-                }}
-                placeholder="Enter your location "
-              />
+            <li className="relative">
+              <LocationConfirmation />
             </li>
             <li>Status : {onlineStatus ? "✅" : "🔴"}</li>
             <li className="hover:scale-110 duration-100">
