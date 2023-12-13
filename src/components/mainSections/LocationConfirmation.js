@@ -8,7 +8,6 @@ import { getLocation } from "../../utils/locationSlice";
 const LocationConfirmation = () => {
   const searchText = useRef(null);
   const [searchData, setSearchData] = useState([]);
-  const [showSuggestion, setShowSuggestion] = useState(false);
   const dispatch = useDispatch();
 
   const handleSearch = (searchQuery) => {
@@ -23,7 +22,7 @@ const LocationConfirmation = () => {
         throw new Error(error);
       } else {
         const { data } = await address.json();
-        console.log("ADDRESS: ", data);
+        // console.log("ADDRESS: ", data);
 
         dispatch(
           getLocation({

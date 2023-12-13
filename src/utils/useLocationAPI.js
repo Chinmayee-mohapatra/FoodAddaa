@@ -1,4 +1,4 @@
-import { ADDRESS_API, LOCATION_API } from "./constants";
+import { LOCATION_API } from "./constants";
 
 export const useLocationAPI = async (searchQuery, setSearchData) => {
   try {

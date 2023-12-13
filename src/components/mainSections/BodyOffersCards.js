@@ -24,7 +24,7 @@ const BodyOffersCards = () => {
     const json = await data.json();
 
     setOfferDetails(json?.data?.cards[0]?.card?.card?.imageGridCards?.info);
-    console.log("OFFER DETAILS: ", offerDetails);
+    // console.log("OFFER DETAILS: ", offerDetails);
   };
 
   return offerDetails?.length === 0 ? (
