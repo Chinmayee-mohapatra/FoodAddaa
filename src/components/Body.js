@@ -31,10 +31,16 @@ const Body = () => {
         lat +
         "&lng=" +
         lng +
-        "&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+        "&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING",
+      {
+        headers: {
+          "x-cors-api-key": "temp_b1ee55ec52573bc9081fb1a8df5cd212",
+        },
+      }
     );
 
     const json = await data.json();
+    console.log("Restaurants list data in Body Component: ", json?.data);
 
     setWhatsOnYourMind(json?.data?.cards[1]);
 

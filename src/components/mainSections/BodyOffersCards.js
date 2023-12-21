@@ -19,12 +19,17 @@ const BodyOffersCards = () => {
         lat +
         "&lng=" +
         lng +
-        "&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+        "&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING",
+      {
+        headers: {
+          "x-cors-api-key": "temp_b1ee55ec52573bc9081fb1a8df5cd212",
+        },
+      }
     );
     const json = await data.json();
 
     setOfferDetails(json?.data?.cards[0]?.card?.card?.imageGridCards?.info);
-    // console.log("OFFER DETAILS: ", offerDetails);
+    console.log("OFFER DETAILS: ", offerDetails);
   };
 
   return offerDetails?.length === 0 ? (
@@ -52,7 +57,7 @@ const BodyOffersCards = () => {
             <img
               src={BODY_OFFER_BANNER + offer?.imageId}
               className="w-full h-auto"
-              style={{ minWidth: "400px", minHeight: "100%" }}
+              style={{ minWidth: "200px", minHeight: "60%" }}
               alt={`Offer ${offer?.id}`}
             />
           </div>

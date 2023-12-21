@@ -9,7 +9,11 @@ const useRestaurantMenu = (resID) => {
   }, []);
 
   const fetchData = async () => {
-    const data = await fetch(MENU_API + resID);
+    const data = await fetch(MENU_API + resID, {
+      headers: {
+        "x-cors-api-key": "temp_b1ee55ec52573bc9081fb1a8df5cd212",
+      },
+    });
     const json = await data.json();
     setResInfo(json.data);
   };
