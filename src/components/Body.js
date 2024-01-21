@@ -34,7 +34,7 @@ const Body = () => {
         "&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING",
       {
         headers: {
-          "x-cors-api-key": "temp_b1ee55ec52573bc9081fb1a8df5cd212",
+          "x-cors-api-key": "temp_ce6e5c1494da7e230091a6a9716c39bd",
         },
       }
     );
@@ -42,13 +42,13 @@ const Body = () => {
     const json = await data.json();
     console.log("Restaurants list data in Body Component: ", json?.data);
 
-    setWhatsOnYourMind(json?.data?.cards[1]);
+    setWhatsOnYourMind(json?.data?.cards[0]);
 
     setListOfRestaurants(
-      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     setFilteredRestaurants(
-      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
 
@@ -112,11 +112,6 @@ const Body = () => {
         <WhatsOnYourMind whatsOnYourMindData={whatsOnYourMindData} />
       </div>
 
-      <div>
-        <p className="font-semibold text-2xl mx-10 my-2">
-          Top restaurant chains
-        </p>
-      </div>
       <div className="flex flex-wrap justify-center">
         {filteredRestaurants?.map((restaurant) => (
           <Link

@@ -6,7 +6,7 @@ const cartSlice = createSlice({
     items: [],
   },
   reducers: {
-    // these are reducer functionsand these will map to an action.
+    // these are reducer functions and these will map to an action.
     addItem: (state, action) => {
       // mutating the state over here.
       // Redux Toolkit uses immer BTS.

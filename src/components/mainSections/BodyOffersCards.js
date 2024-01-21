@@ -22,7 +22,7 @@ const BodyOffersCards = () => {
         "&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING",
       {
         headers: {
-          "x-cors-api-key": "temp_b1ee55ec52573bc9081fb1a8df5cd212",
+          "x-cors-api-key": "temp_ce6e5c1494da7e230091a6a9716c39bd",
         },
       }
     );

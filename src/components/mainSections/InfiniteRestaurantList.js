@@ -3,6 +3,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import { SWIGGY_RES_LIST_API } from "../../utils/constants";
 import RestaurantCard, { withOfferLabel } from "../RestaurantCard";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const InfiniteRestaurantList = () => {
   const [restaurants, setLocalData] = useState([]);
@@ -10,16 +11,30 @@ const InfiniteRestaurantList = () => {
 
   const RestaurantCardOffer = withOfferLabel(RestaurantCard);
 
+  const { lat, lng } = useSelector((store) => store.location.userLocation);
+
   useEffect(() => {
     fetchData();
     updateDataFromLocalData();
   }, []);
 
   const fetchData = async () => {
-    const response = await fetch(SWIGGY_RES_LIST_API);
+    const response = await fetch(
+      SWIGGY_RES_LIST_API +
+        "lat=" +
+        lat +
+        "&lng=" +
+        lng +
+        "&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING",
+      {
+        headers: {
+          "x-cors-api-key": "temp_ce6e5c1494da7e230091a6a9716c39bd",
+        },
+      }
+    );
     const json = await response.json();
     setLocalData([
-      ...json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle
+      ...json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants,
     ]);
   };
@@ -33,7 +48,6 @@ const InfiniteRestaurantList = () => {
       <div className="mx-6 mb-2 font-semibold text-2xl">More restaurants</div>
       <InfiniteScroll
         hasMore={true}
-        loader={<p>Loading...</p>}
         dataLength={data.length}
         next={updateDataFromLocalData}
         endMessage={<p>No more restaurant</p>}
