@@ -1,5 +1,4 @@
 import React from "react";
-import MapComponent from "./MapComponent";
 
 const ContactUs = () => {
   return (
@@ -33,9 +32,6 @@ const ContactUs = () => {
             Submit
           </button>
         </form>
-      </div>
-      <div className="w-1/2 my-10">
-        <MapComponent isMarkerShown />
       </div>
     </div>
   );
