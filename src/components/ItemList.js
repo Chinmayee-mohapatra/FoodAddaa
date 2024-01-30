@@ -19,13 +19,13 @@ const ItemList = ({ veg, items }) => {
     if (veg) {
       setFilteredItems(
         items.filter(
-          (item) => item?.card?.info?.itemAttribute?.vegClassifier === "VEG",
-        ),
+          (item) => item?.card?.info?.itemAttribute?.vegClassifier === "VEG"
+        )
       );
     } else {
       setFilteredItems(items);
     }
-  });
+  }, []);
 
   return filteredItems?.length === 0 ? (
     <div>--</div>

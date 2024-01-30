@@ -108,7 +108,7 @@ const Body = () => {
 
       {/* Offers on body page */}
       <div className="">
-        <BodyOffersCards />
+        {/* <BodyOffersCards /> */}
         <WhatsOnYourMind whatsOnYourMindData={whatsOnYourMindData} />
       </div>
 
