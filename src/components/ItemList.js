@@ -33,13 +33,11 @@ const ItemList = ({ veg, items }) => {
     <div>
       {filteredItems?.map((item) => (
         <div
+          key={item?.card?.info?.id}
           data-testid="foodItems"
           className="flex justify-between items-center p-2 m-2 border-gray-200 border-b-2"
         >
-          <div
-            key={item?.card?.info?.id}
-            className="w-8/12 text-left font-sans"
-          >
+          <div className="w-8/12 text-left font-sans">
             <div className="flex flex-col py-2">
               <span>
                 {item?.card?.info?.itemAttribute?.vegClassifier === "VEG" ? (
