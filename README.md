@@ -1,21 +1,22 @@
 # FoodAdda
 
-FoodAdda is a web application with features similar to Swiggy, offering a seamless way to discover delicious food from a variety of restaurants. With a dynamic and engaging user interface, it provides a delightful experience for food enthusiasts.
+FoodAdda is a web application with features similar to Swiggy, offering a seamless way to discover delicious food from various restaurants. With a dynamic and engaging user interface, it provides a delightful experience for food enthusiasts.
 
 ![HomePage](image.png)
 
 ### Live Demo
 
-Check out the live demo of FoodAdda at https://foodaddaa-103ee.web.app/.
+Check out the live demo of FoodAdda at [https://foodaddaa-103ee.web.app/](https://foodaddaa-e39d7.web.app).
+Use the "CORS Unblock" Chrome extension to bypass the CORS error.
 
 ### Key Features
 
 - Seamless Integration with Swiggy's Public API: FoodAdda connects to Swiggy's public API to provide users with access to a wide range of restaurants and cuisines.
-- Elegant Shimmer UI: The application features a stunning shimmer effect, enhancing the user experience and making the loading process engaging.
+- Elegant Shimmer UI: The application features a stunning shimmer effect, enhancing the user experience and engaging the loading process.
 - Dynamic Landing Page: The homepage showcases various restaurants, cuisines, average ratings, and delivery times. It includes a captivating carousel to grab users' attention.
 - Robust Search and Filtering: FoodAdda offers robust search and filtering options, making it easy for users to find their favorite dishes and restaurants.
 - Detailed Restaurant Menu Pages: Explore detailed restaurant menu pages with categorized listings to make informed choices.
-- Convenient Cart Management: A smooth shopping experience is ensured with convenient cart management, allowing users to add and remove items seamlessly.
+- Convenient Cart Management: Convenient cart management ensures a smooth shopping experience, allowing users to add and remove items seamlessly.
 
 ### Tech Stack
 
