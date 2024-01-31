@@ -28,6 +28,6 @@ export const BODY_OFFER_BANNER =
 export const ITEMS_ICON =
   "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_160,h_192/";
 
-export const LOCATION_API = `${CORS_POLICY}https://www.swiggy.com/dapi/misc/place-autocomplete?input=`;
+export const LOCATION_API = `https://www.swiggy.com/dapi/misc/place-autocomplete?input=`;
 
-export const ADDRESS_API = `${CORS_POLICY}https://www.swiggy.com/dapi/misc/address-recommend?place_id=`;
+export const ADDRESS_API = `https://www.swiggy.com/dapi/misc/address-recommend?place_id=`;
