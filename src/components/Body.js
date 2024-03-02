@@ -34,7 +34,7 @@ const Body = () => {
         "&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING",
       {
         headers: {
-          "x-cors-api-key": "temp_7f4ea4614498258d4e8c836d92dd20a7",
+          "x-cors-api-key": "temp_bc8cd69742250ac642a71702514b33b9",
         },
       }
     );

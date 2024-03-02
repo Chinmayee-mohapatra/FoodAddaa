@@ -25,7 +25,7 @@ const ItemList = ({ veg, items }) => {
     } else {
       setFilteredItems(items);
     }
-  }, []);
+  }, [veg]);
 
   return filteredItems?.length === 0 ? (
     <div>--</div>

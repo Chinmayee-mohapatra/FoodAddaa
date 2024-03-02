@@ -16,7 +16,9 @@ const RestaurantMenu = () => {
 
   if (resInfo === null) return <Shimmer />;
 
-  const { offers } = resInfo?.cards[3]?.card?.card?.gridElements?.infoWithStyle;
+  console.log("Restaurant Information: ", resInfo);
+
+  // const { offers } = resInfo?.cards[3]?.card?.card?.gridElements?.infoWithStyle;
 
   const {
     name,
@@ -74,11 +76,12 @@ const RestaurantMenu = () => {
       <div className="w-full mt-4 border-t-2 border-dashed py-4">
         <h3 className="font-bold mb-3">{costForTwoMessage}</h3>
 
-        <div className="flex gap-3 overflow-hidden my-6">
-          {offers.map((offer) => (
-            <OfferCard key={offer.info.offerIds[0]} data={offer} />
-          ))}
-        </div>
+        {/* <div className="flex gap-3 overflow-hidden my-6">
+          {offers &&
+            offers?.map((offer) => (
+              <OfferCard key={offer.info.offerIds[0]} data={offer} />
+            ))}
+        </div> */}
       </div>
 
       <div className="flex flex-row gap-2">

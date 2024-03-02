@@ -11,7 +11,7 @@ it("Should render restaurantCard component with props Data", () => {
 });
 
 // it("Should render restaurantCard component with Promoted Label", () => {
-//   // using props for testing
+//  // using props for testing
 //   render();
 //   const name = screen.getByText("");
 //   expect(name).toBeInTheDocument();
