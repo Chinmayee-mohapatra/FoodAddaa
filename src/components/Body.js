@@ -27,14 +27,14 @@ const Body = () => {
   const fetchData = async () => {
     const data = await fetch(
       SWIGGY_RES_LIST_API +
-        "lat=" +
+        "&lat=" +
         lat +
         "&lng=" +
         lng +
         "&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING",
       {
         headers: {
-          "x-cors-api-key": "temp_bc8cd69742250ac642a71702514b33b9",
+          "x-cors-api-key": "temp_376ff21bd9ebc092716968dedbb95ad5",
         },
       }
     );

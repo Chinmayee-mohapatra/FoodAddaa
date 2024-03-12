@@ -95,7 +95,7 @@ const Header = ({ isLoginForm, setLoginForm }) => {
             </li>
             <li>Status : {onlineStatus ? "✅" : "🔴"}</li>
             <li className="hover:scale-110 duration-100">
-              <Link to="/browse/">Home</Link>
+              <Link to="/browse">Home</Link>
             </li>
             <li className="hover:scale-110 duration-100">
               <Link to="/browse/about">About</Link>

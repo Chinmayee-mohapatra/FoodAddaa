@@ -21,8 +21,8 @@ it("Should Search restaurant list for KS Bakers text input", async () => {
     render(
       <BrowserRouter>
         <Body />
-      </BrowserRouter>,
-    ),
+      </BrowserRouter>
+    )
   );
 
   //ReferenceError: fetch is not defined
@@ -62,8 +62,8 @@ it("Should filter Top Rated Restaurants", async () => {
     render(
       <BrowserRouter>
         <Body />
-      </BrowserRouter>,
-    ),
+      </BrowserRouter>
+    )
   );
 
   const cardsBeforeFilter = screen.getAllByTestId("resData");
